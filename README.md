@@ -1,1 +1,1 @@
-# Projet-Ceres  ![app-test](https://github.com/VincentNOURY/Projet-Ceres/actions/workflows/python-app.yml/badge.svg)  ![package-test](https://github.com/VincentNOURY/Projet-Ceres/actions/workflows/python-package.yml/badge.svg)
+# Projet-Ceres  [![made-with-python](https://img.shields.io/badge/Made%20with-Python-blue.svg?style=flat-square)](https://www.python.org/)
