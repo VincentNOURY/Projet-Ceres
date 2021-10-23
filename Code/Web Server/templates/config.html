@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>View</title>
+  </head>
+  <body>
+    <h1>Test</h1>
+    <form method="POST">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message[0]}} <input type="text" name={{message[1]}} autocomplete="off" placeholder={{message[2]}}></p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <button>Send</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+requests
+math
+json
+flask
+Adafruit-DHT
