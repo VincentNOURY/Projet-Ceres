@@ -1,1 +1,1 @@
-# Projet-Ceres ![tests](https://github.com/VincentNOURY/Projet-Ceres/actions/workflows/python-app.yml/badge.svg)
+# Projet-Ceres  ![app-test](https://github.com/VincentNOURY/Projet-Ceres/actions/workflows/python-app.yml/badge.svg)  ![package-test](https://github.com/VincentNOURY/Projet-Ceres/actions/workflows/python-package.yml/badge.svg)
