@@ -1,0 +1,76 @@
+body {
+  background-color : lightblue;
+}
+
+header h1 {
+  padding          : 10px;
+  background-color : white;
+  text-align       : center;
+  font-family      : cursive;
+  font-size        : 50px;
+  font-style       : italic;
+}
+
+div#content div.prevision {
+  background-color : white;
+}
+
+div#content div.prevision div {
+  display : inline-block;
+  width   : 48%;
+}
+
+h3 {
+  text-align     : center;
+  vertical-align : top;
+}
+
+div#content div.prevision p {
+  display        : inline-block;
+  width          : 20%;
+  vertical-align : top;
+}
+
+div#content div.temps {
+  background-color : white;
+}
+
+div#content div.prevision h2 {
+  text-align : center;
+}
+
+div#content div.temps h2 {
+  text-align : center;
+}
+
+div#bloc div {
+  display          : inline-block;
+  width            : 48%;
+  background-color : white;
+}
+
+div#bloc div.capteurs h2 {
+  text-align : center;
+}
+
+div#bloc div.electrovanne h2 {
+  text-align : center;
+}
+
+div#bloc div.capteurs {
+  vertical-align : top;
+}
+
+div#bloc div.electrovanne {
+  vertical-align : top;
+}
+
+div#bloc div.electrovanne ul li.btn {
+  display          : inline-block;
+  width            : 45%;
+  padding          : 10px;
+  color            : white;
+  background-color : blue;
+  text-align       : center;
+  list-style-type  : none;
+}

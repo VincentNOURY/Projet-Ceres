@@ -26,10 +26,10 @@ def get_meteo() -> dict:
     data = json.loads(res.text) #Dictionary containg the result of the API call
 
     if data["request_state"] == "200" or data["message"] == "OK":
-        for key in list(data.keys())[5:]:
-            print(f"date : {key}  ==> pluie : {data[key]['pluie']}")
+        #for key in list(data.keys())[5:]:
+            #print(f"date : {key}  ==> pluie : {data[key]['pluie']}")
 
-        print("Total de pluie pour la journée (en mm) :")
+        #print("Total de pluie pour la journée (en mm) :")
         date = list(data.keys())[5].split(" ")[0]
         tot = float(data[list(data.keys())[5]]["pluie"])
         rain = {}
@@ -37,13 +37,13 @@ def get_meteo() -> dict:
         for key in list(data.keys())[6:]:
             if date != key.split(" ")[0]:
                 rain[key.split(" ")[0]] = math.ceil(tot)
-                print(f"{date} : {math.ceil(tot)} mm")
+                #print(f"{date} : {math.ceil(tot)} mm")
                 date = key.split(" ")[0]
                 tot = 0
             tot += float(data[key]['pluie'])
 
         rain[key] = math.ceil(tot)
-        print(f"{date} : {math.ceil(tot)} mm")
+        #print(f"{date} : {math.ceil(tot)} mm")
 
     return rain
 
@@ -52,7 +52,7 @@ def main():
     """
     Description : main function is called only if the file is called directly
     """
-    
+
     get_meteo()
     #meteo = get_meteo()
     #print(dict)
