@@ -113,5 +113,9 @@ def config_page():
     print("Unauthorised")
     return flask.render_template(flask.url_for("home"))
 
-if __name__ == '__main__':
+
+def start():
     app.run()
+
+if __name__ == '__main__':
+    start()
