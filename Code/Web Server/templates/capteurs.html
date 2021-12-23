@@ -3,17 +3,42 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="script/script.js"></script>
     <title>Acquisition capteurs</title>
   </head>
   <body>
-    <h1>Capteurs</h1>
-    <form method="post">
-      <input type="text" name="ID" autocomplete="off"><br />
-      <input type="text" name="temp" autocomplete="off"><br />
-      <input type="text" name="humidity" autocomplete="off"><br />
+    <header>
+    <h1>CERES</h1>
+  </header>
 
-      <button>Send</button>
+  <div id="title">
+    <h1 class="title">Capteurs</h1>
+  </div>
 
-    </form>
+  <div class="container">
+    <div>
+      <h4>Éléments insérés</h4>
+      <table name="affichage">
+        <tr>
+          <td>ID capteur</td>
+          <td>Température</td>
+          <td>Humidité</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div>
+      <form action="#" method="post" name="capteurs">
+        <p>Identifiant du capteur : <input type="text" name="ID" autocomplete="off"></p>
+        <p>Température : <input type="text" name="temp" autocomplete="off"></p>
+        <p>Humidité : <input type="text" name="humidity" autocomplete="off"></p>
+
+        <button type="button" onclick="ajoute();">Send</button>
+
+      </form>
+    </div>
+  </div>
+
   </body>
 </html>

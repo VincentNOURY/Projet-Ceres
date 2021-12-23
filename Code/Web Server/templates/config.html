@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>View</title>
+    <title>Configuration</title>
   </head>
   <body>
-    <h1>Test</h1>
+    <header>
+      <h1>CERES</h1>
+    </header>
+    <div id="title">
+      <h1 class="title">Configuration</h1>
+    </div>
+
     <form method="POST">
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          {% for message in messages %}
-            <p>{{message[0]}} <input type="text" name={{message[1]}} autocomplete="off" placeholder={{message[2]}}></p>
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
+      <p>Temps avant arrosage : <input type="text" name="tempsarrosage" autocomplete="off" placeholder="Default: 2 days"></p>
+      <p>Quantité avant arrosage : <input type="text" name="quantitearrosage" autocomplete="off" placeholder="Default: 10mm"></p>
       <button>Send</button>
     </form>
   </body>
