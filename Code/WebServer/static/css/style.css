@@ -1,0 +1,150 @@
+body {
+  background-color : lightblue;
+}
+
+#background {
+  z-index    : -1;
+  position   : fixed;
+  top        : 0;
+  right      : 0;
+  bottom     : 0;
+  left       : 0;
+  width      : 100vw;
+  height     : 100vh;
+  object-fit : cover;
+}
+
+.transparent {
+  background-color : rgba(255, 255, 255, 0.3);
+}
+
+header {
+  font-style : italic;
+}
+
+.head {
+  text-align : center;
+}
+
+header h1 {
+  font-size : 4em;
+}
+
+.logo {
+  position : absolute;
+  width    : 6em;
+  height   : 6em;
+}
+
+button {
+  width            : 19%;
+  overflow         : hidden;
+  border           : none;
+  border-top       : 0.1em solid white;
+  border-right     : 0.1em solid grey;
+  border-bottom    : 0.1em solid grey;
+  border-left      : 0.1em solid white;
+  background-color : lightblue;
+  font-size        : 2em;
+}
+
+button:hover {
+  background-color : #3ca1c3;
+}
+
+button:active {
+  border-top       : 0.1em solid grey;
+  border-right     : 0.1em solid white;
+  border-bottom    : 0.1em solid white;
+  border-left      : 0.1em solid grey;
+  background-color : #3ca1c3;
+}
+
+#topbar {
+  padding        : 0;
+  padding-bottom : 1em;
+}
+
+div#content div.prevision {
+  margin     : 0;
+  padding    : 0;
+  text-align : center;
+}
+
+div#content div.prevision div {
+  display : inline-table;
+  width   : 45%;
+}
+
+h3 {
+  text-align     : center;
+  vertical-align : top;
+}
+
+div#title h1 {
+  text-align : center;
+}
+
+div#content div.prevision td,
+div#content div.prevision th {
+  align-self : center;
+}
+
+div#content div.prevision h2 {
+  text-align : center;
+}
+
+div#content div.temps h2 {
+  text-align : center;
+}
+
+div#bloc div {
+  display : inline-block;
+  width   : 49.8%;
+}
+
+div#bloc div.capteurs h2 {
+  text-align : center;
+}
+
+div#bloc div.electrovanne h2 {
+  text-align : center;
+}
+
+div#bloc div.capteurs {
+  vertical-align : top;
+}
+
+div#bloc div.electrovanne {
+  vertical-align : top;
+}
+
+.container button,
+div#bloc div.electrovanne button {
+  width     : 49.7%;
+  font-size : 1.5em;
+}
+
+table {
+  border-collapse : collapse;
+  text-align      : center;
+}
+
+td {
+  border-right : 3px solid black;
+  border-left  : 3px solid black;
+}
+
+.container {
+  display    : flex;
+  text-align : center;
+}
+
+.container div {
+  width : 100%;
+}
+
+.container div table {
+  margin : auto;
+  border : 3px solid black;
+}

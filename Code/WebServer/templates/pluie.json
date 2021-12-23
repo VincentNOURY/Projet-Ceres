@@ -1,0 +1,50 @@
+{
+  "0": {
+    "heure": "00H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  },
+  "1": {
+    "heure": "03H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  },
+  "2": {
+    "heure": "06H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  },
+  "3": {
+    "heure": "09H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  },
+  "4": {
+    "heure": "12H",
+    "pluie0": "0",
+    "pluie1": "3",
+    "pluie2": "0"
+  },
+  "5": {
+    "heure": "15H",
+    "pluie0": "0",
+    "pluie1": "5",
+    "pluie2": "0"
+  },
+  "6": {
+    "heure": "18H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  },
+  "7": {
+    "heure": "21H",
+    "pluie0": "0",
+    "pluie1": "0",
+    "pluie2": "0"
+  }
+}

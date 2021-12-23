@@ -32,7 +32,15 @@ def home():
                 /home
     """
 
-    return flask.render_template("index.html")
+    return flask.render_template("accueil.html")
+
+@app.route("/pluie.json", methods = ["GET"])
+def pluie():
+    return flask.render_template("pluie.json")
+
+@app.route("/temperature.json", methods = ["GET"])
+def temperature():
+    return flask.render_template("temperature.json")
 
 @app.route("/capteurs", methods = ["POST", "GET"])
 def capteurs():

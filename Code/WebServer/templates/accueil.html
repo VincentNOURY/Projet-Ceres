@@ -4,18 +4,18 @@
 	<head>
 		<title>Ceres</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="script/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
 	</head>
 
 	<body>
 		<span id="time"></span>
 		<video id="background" autoplay loop muted>
-			<source src="files/video/background.webm" type="video/webm">
+			<source src="{{ url_for('static', filename='files/video/background.webm') }}" type="video/webm">
 		</video>
 
 		<header class="transparent">
-			<img src="files/images/logo.png" class="logo">
+			<img src="{{ url_for('static', filename='files/images/logo.png') }}" class="logo">
 			<div class="head">
 				<h1>CERES</h1>
 
