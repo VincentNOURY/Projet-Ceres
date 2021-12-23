@@ -113,7 +113,7 @@ def write_to_json(path : str):
 
     with open(path + "/temperature.json", 'w') as file:
         json.dump(final_temp, file)
-    return final
+    return final, final_temp
 
 def main():
 

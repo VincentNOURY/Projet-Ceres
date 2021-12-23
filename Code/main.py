@@ -30,5 +30,5 @@ def prevision_arrosage(dernier_arrosage):
 if __name__ == '__main__':
     dernier_arrosage = "2021-11-28"
     estimation_arrosage = prevision_arrosage(dernier_arrosage)
-    print(write_to_json("WebServer/templates"))
-    #start()
+    pluie, temp = write_to_json("WebServer/templates")
+    start()

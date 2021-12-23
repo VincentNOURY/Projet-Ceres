@@ -18,18 +18,24 @@ async function getMeteo(){
     .then(function (data){
       let meteo = document.querySelector("#pluie");
       for (let i = 0; i < 8; i++){
-        let tr = document.createElement('tr');
+        let index = (i*3 + 1).toString();
+        
         const td1 = document.createElement("td");
-        td1.textContent=data[i.toString()]['heure'];
+        td1.textContent=index + "H";
+
+        if (index.length < 2){
+          index = "0" + index;
+        }
+        let tr = document.createElement('tr');
 
         const td2 = document.createElement('td');
-        td2.textContent=data[i.toString()]['pluie0'];
+        td2.textContent=data["0"][index];
 
         const td3 = document.createElement('td');
-        td3.textContent=data[i.toString()]['pluie1'];
+        td3.textContent=data["1"][index];
 
         const td4 = document.createElement('td');
-        td4.textContent=data[i.toString()]['pluie2'];
+        td4.textContent=data["2"][index];
 
         tr.appendChild(td1);
         tr.appendChild(td2);
@@ -46,18 +52,24 @@ async function getMeteo(){
     .then(function (data){
       let meteo = document.querySelector("#temperature");
       for (let i = 0; i < 8; i++){
-        let tr = document.createElement('tr');
+        let index = (i*3 + 1).toString();
+
         const td1 = document.createElement("td");
-        td1.textContent=data[i.toString()]['heure'];
+        td1.textContent=index + "H";
+
+        if (index.length < 2){
+          index = "0" + index;
+        }
+        let tr = document.createElement('tr');
 
         const td2 = document.createElement('td');
-        td2.textContent=data[i.toString()]['temp0'];
+        td2.textContent=data["0"][index];
 
         const td3 = document.createElement('td');
-        td3.textContent=data[i.toString()]['temp1'];
+        td3.textContent=data["1"][index];
 
         const td4 = document.createElement('td');
-        td4.textContent=data[i.toString()]['temp2'];
+        td4.textContent=data["2"][index];
 
         tr.appendChild(td1);
         tr.appendChild(td2);
