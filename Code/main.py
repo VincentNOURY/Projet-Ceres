@@ -8,6 +8,7 @@ from WebServer.web_server import start
 
 SEUIL = 3
 ATROPLU = 10
+TROUMID = 30
 
 def calcul_arrosage(dernier_arrosage : str):
     """
@@ -27,6 +28,16 @@ def calcul_arrosage(dernier_arrosage : str):
         if diff_dates(dernier_arrosage)>=SEUIL:
             if s<ATROPLU:
                 pass #arroser
+    h=0
+    a=0
+    with open("WebServer/Capteurs info/Capteurs.json") as file:
+        humidite = json.loads(file.read())
+        for i in humidite.keys():
+            for j in i.keys():
+                h = h + int(humidite[i]["humidite"])
+        a = h/len(humidite.keys())
+        if a<TROUMID:
+            pass #arroser
 
 def creer_date(nb_days):
     return(str(date.today() + timedelta(days=1)))
