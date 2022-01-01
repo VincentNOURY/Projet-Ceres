@@ -1,1 +1,27 @@
-{"01": {"ID": "01", "temp": "qq", "humidity": "qq"}, "5": {"ID": "5", "temp": "asd", "humidity": "sdfg"}, "id": {"ID": "id", "temp": "1", "humidity": "2"}, "345": {"ID": "345", "temp": "sdcfvgb", "humidity": "defgrhtj"}, "7": {"ID": "7", "temp": "03", "humidity": "00"}}
+{
+  "5": {
+    "ID": "5",
+    "temp": "asd",
+    "humidity": "4"
+  },
+  "7": {
+    "ID": "7",
+    "temp": "03",
+    "humidity": "00"
+  },
+  "345": {
+    "ID": "345",
+    "temp": "sdcfvgb",
+    "humidity": "9"
+  },
+  "01": {
+    "ID": "01",
+    "temp": "qq",
+    "humidity": "6"
+  },
+  "id": {
+    "ID": "id",
+    "temp": "1",
+    "humidity": "2"
+  }
+}
