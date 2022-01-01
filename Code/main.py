@@ -7,6 +7,7 @@ from WebServer.web_server import start
 
 
 SEUIL = 3
+ATROPLU = 10
 
 def calcul_arrosage(dernier_arrosage : str):
     """
@@ -17,9 +18,15 @@ def calcul_arrosage(dernier_arrosage : str):
 
     Return :
     """
-    if diff_dates(dernier_arrosage) >= SEUIL:
-        pass #arroser
-
+    with open("WebServer/templates/pluie.json", 'r') as file:
+        s=0
+        pluie = json.loads(file.read())
+        for i in pluie.keys():
+            for j in i.keys():
+                s = s + int(pluie[i][j])
+        if diff_dates(dernier_arrosage)>=SEUIL:
+            if s<ATROPLU:
+                pass #arroser
 
 def creer_date(nb_days):
     return(str(date.today() + timedelta(days=1)))
