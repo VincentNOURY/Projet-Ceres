@@ -17,7 +17,7 @@ def read_config():
     Return : a dictionnary containing the configs
     """
 
-    with open("Config/config.json", 'r', encoding = "utf-8") as file:
+    with open("WebServer/Config/config.json", 'r', encoding = "utf-8") as file:
         data = json.load(file)
     return data
 
@@ -56,20 +56,20 @@ def capteurs():
     """
 
     if flask.request.method == "POST":
-        with open("Capteurs info/Capteurs.json", 'r', encoding = "utf-8") as file:
+        with open("WebServer/Capteurs info/Capteurs.json", 'r', encoding = "utf-8") as file:
             data = json.load(file)
         data2 = {}
         data2[flask.request.form["ID"]] = flask.request.form
         for key,value in data2.items():
             if value != "":
                 data[key] = value
-        print(data)
-        with open("Capteurs info/Capteurs.json", 'w', encoding = "utf-8") as file:
+        log('debug', data)
+        with open("WebServer/Capteurs info/Capteurs.json", 'w', encoding = "utf-8") as file:
             file.write(json.dumps(data))
         return flask.redirect(flask.url_for('view'))
     if flask.request.method == "GET":
         return flask.render_template('capteurs.html')
-    print("Unauthorised")
+    log('error', "Unauthorised")
     return flask.render_template(flask.url_for("home"))
 
 @app.route("/view", methods = ["GET"])
@@ -83,7 +83,7 @@ def view():
     GET : Reads the Capteurs info/Capteurs.json file to display it on the /capteurs page
     """
 
-    with open("Capteurs info/Capteurs.json", 'r', encoding = "utf-8") as file:
+    with open("WebServer/Capteurs info/Capteurs.json", 'r', encoding = "utf-8") as file:
         data = json.load(file)
     for key in data.keys():
         flask.flash(f"ID capteur : {data[key]['ID']}")
@@ -111,16 +111,19 @@ def config_page():
         return flask.render_template("config.html")
     if flask.request.method == "POST":
         config = read_config()
-        print(flask.request.form)
+        log('debug', flask.request.form)
         for key in flask.request.form.keys():
             if flask.request.form[key] != "":
                 config[key] = flask.request.form[key]
-        with open("Config/config.json", 'w', encoding = "utf-8") as file:
+        with open("WebServer/Config/config.json", 'w', encoding = "utf-8") as file:
             file.write(json.dumps(config))
         return flask.redirect(flask.url_for("config_page"))
-    print("Unauthorised")
+    log('error', "Unauthorised")
     return flask.render_template(flask.url_for("home"))
 
+@app.route("/contact", methods = ["GET"])
+def contact():
+    return flask.render_template("contact.html")
 
 def start():
     app.run()

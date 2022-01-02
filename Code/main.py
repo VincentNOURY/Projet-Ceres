@@ -5,6 +5,7 @@ from Meteo.meteo import get_meteo
 from datetime import timedelta
 from datetime import date
 from time import sleep
+from logs import log
 import threading
 import json
 
@@ -23,7 +24,7 @@ def calcul_arrosage(dernier_arrosage : str):
 
     Return :
     """
-    print("[Debug] Start of calcul_arrosage")
+    log("debug", "Start of calcul_arrosage")
     with open("WebServer/templates/pluie.json", 'r') as file:
         s=0
         pluie = json.loads(file.read())
@@ -40,7 +41,7 @@ def calcul_arrosage(dernier_arrosage : str):
 
     if diff_dates(dernier_arrosage)>=SEUIL:
         if s < ATROPLU and a < TROUMID:
-            print("[Debug] c bon")
+            log("debug", "Arrosage")
             dernier_arrosage = str(date.today())
             #pass #arroser
 

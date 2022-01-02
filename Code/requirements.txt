@@ -2,4 +2,10 @@ requests
 math
 json
 flask
-Adafruit-DHT
+adafruit_dht
+RPi.GPIO
+Constellation
+time
+datetime
+threading
+board
