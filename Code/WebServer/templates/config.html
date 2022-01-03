@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Configuration</title>
   </head>
   <body>
@@ -14,9 +14,16 @@
     </div>
 
     <form method="POST">
-      <p>Temps avant arrosage : <input type="text" name="tempsarrosage" autocomplete="off" placeholder="Default: 2 days"></p>
-      <p>Quantité avant arrosage : <input type="text" name="quantitearrosage" autocomplete="off" placeholder="Default: 10mm"></p>
-      <button>Send</button>
+      <!--<p>Temps avant arrosage : <input type="text" name="tempsarrosage" autocomplete="off" placeholder="Default: 2 days"></p>
+      <p>Quantité avant arrosage : <input type="text" name="quantitearrosage" autocomplete="off" placeholder="Default: 10mm"></p>-->
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{ message[0] }} <input type="text" name="{{ message[1] }}" autocomplete="off" placeholder="{{ message[2] }}"></p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <button type='submit'>Send</button>
     </form>
   </body>
 </html>

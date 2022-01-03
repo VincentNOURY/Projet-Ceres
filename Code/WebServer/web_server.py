@@ -1,11 +1,14 @@
 """Initialise a webserver for the Ceres-Project"""
 
-import json
+#from Capteur.Tout_en_un import arroser
 import flask
+import json
+from logs import log
 
 
 app = flask.Flask(__name__)
 app.secret_key = "mykey"
+ARROSAGE_TIMEOUT = 120
 
 def read_config():
 
@@ -56,6 +59,7 @@ def capteurs():
     """
 
     if flask.request.method == "POST":
+        log('debug', 'post used')
         with open("WebServer/Capteurs info/Capteurs.json", 'r', encoding = "utf-8") as file:
             data = json.load(file)
         data2 = {}
@@ -107,6 +111,7 @@ def config_page():
     if flask.request.method == "GET":
         config = read_config()
         for key in config.keys():
+            log('debug', [f"{key.replace('_', ' ').capitalize()} : ", key, config[key]])
             flask.flash([f"{key.replace('_', ' ').capitalize()} : ", key, config[key]])
         return flask.render_template("config.html")
     if flask.request.method == "POST":
@@ -124,6 +129,16 @@ def config_page():
 @app.route("/contact", methods = ["GET"])
 def contact():
     return flask.render_template("contact.html")
+
+@app.route('/arrosage', methods = ["GET"])
+def arrosage():
+    arroser(90, ARROSAGE_TIMEOUT)
+    return flask.render_template(flask.url_for('home'))
+
+@app.route('/eteindre', methods = ["GET"])
+def eteindre():
+    arrosage(0, 0)
+    return flask.render_template(flask.url_for('home'))
 
 def start():
     app.run()

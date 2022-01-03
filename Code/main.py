@@ -1,4 +1,5 @@
 from WebServer.web_server import start as start_server
+#from Capteur.Tout_en_un import arroser
 from Meteo.meteo import write_to_json
 from Meteo.meteo import diff_dates
 from Meteo.meteo import get_meteo
@@ -14,6 +15,7 @@ SEUIL = 3
 ATROPLU = 10
 TROUMID = 30
 DELAY = 3600 # time between checks
+TEMPS_ARROSAGE = 30
 
 def calcul_arrosage(dernier_arrosage : str):
     """
@@ -43,7 +45,7 @@ def calcul_arrosage(dernier_arrosage : str):
         if s < ATROPLU and a < TROUMID:
             log("debug", "Arrosage")
             dernier_arrosage = str(date.today())
-            #pass #arroser
+            #arroser(90, TEMPS_ARROSAGE)
 
 def creer_date(nb_days):
     return(str(date.today() + timedelta(days=1)))

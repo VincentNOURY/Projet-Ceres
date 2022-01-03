@@ -2,8 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="script/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Acquisition capteurs</title>
   </head>
   <body>
@@ -29,12 +28,12 @@
 
 
     <div>
-      <form action="#" method="post" name="capteurs">
+      <form method="POST" name="capteurs">
         <p>Identifiant du capteur : <input type="text" name="ID" autocomplete="off"></p>
         <p>Température : <input type="text" name="temp" autocomplete="off"></p>
         <p>Humidité : <input type="text" name="humidity" autocomplete="off"></p>
 
-        <button type="button" onclick="ajoute();">Send</button>
+        <button type="submit">Send</button>
 
       </form>
     </div>

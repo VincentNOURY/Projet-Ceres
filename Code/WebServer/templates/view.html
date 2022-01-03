@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <title>View</title>
   </head>
   <body>
@@ -12,14 +12,12 @@
     <div id="title">
       <h1 class="title">Données des capteurs</h1>
     </div>
-          <h4>Capteur 1 :</h4>
-          <p>Température : 22°C</p>
-          <p>Humidité : 5%</p>
-          <h4>Capteur 2 :</h4>
-          <p>Température : 23°C</p>
-          <p>Humidité : 6%</p>
-          <h4>Capteur 3 :</h4>
-          <p>Température : 21°C</p>
-          <p>Humidité : 5%</p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
   </body>
 </html>
